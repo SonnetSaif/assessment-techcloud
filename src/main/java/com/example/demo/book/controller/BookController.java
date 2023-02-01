@@ -20,9 +20,9 @@ public class BookController {
 
     private final Logger log = LoggerFactory.getLogger(BookController.class);
 
-    BookEntity bookEntity1 = new BookEntity("1", "abcd");
-    BookEntity bookEntity2 = new BookEntity("2", "xyz");
-    BookEntity bookEntity3 = new BookEntity("3", "qert");
+    BookEntity bookEntity1 = new BookEntity("1", "book1");
+    BookEntity bookEntity2 = new BookEntity("2", "book2");
+    BookEntity bookEntity3 = new BookEntity("3", "book3");
 
     @GetMapping("")
     public ResponseEntity<List<BookEntity>> getAllBooks() {

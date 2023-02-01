@@ -22,9 +22,9 @@ public class PenController {
 
     private final Logger log = LoggerFactory.getLogger(PenController.class);
 
-    PenEntity penEntity1 = new PenEntity("1", "abcd");
-    PenEntity penEntity2 = new PenEntity("2", "xyz");
-    PenEntity penEntity3 = new PenEntity("3", "qert");
+    PenEntity penEntity1 = new PenEntity("1", "pen1");
+    PenEntity penEntity2 = new PenEntity("2", "pen2");
+    PenEntity penEntity3 = new PenEntity("3", "pen3");
 
     @GetMapping("")
     public ResponseEntity<Map<String, Object>> getAllBooks() {
