@@ -26,8 +26,8 @@ public class JwtUtils {
 
         String json = "{\"name\":\"sonnet\",\"id\":\"001\",\"validated\":\"true\"}";
         return Jwts.builder().setSubject(json).setIssuedAt(new Date())
-            .setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
-            .signWith(SignatureAlgorithm.HS512, jwtSecret).compact();
+                .setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
+                .signWith(SignatureAlgorithm.HS512, jwtSecret).compact();
     }
 
     public String getJsonFromJwtToken(String token) {

@@ -1,19 +1,20 @@
 package com.example.demo.pen.controller;
 
-import com.example.demo.book.controller.BookController;
-import com.example.demo.book.entity.BookEntity;
 import com.example.demo.pen.entity.PenEntity;
-import org.apache.tomcat.util.http.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/v1/pen")
@@ -35,5 +36,14 @@ public class PenController {
         Map<String, Object> response = new HashMap<>();
         response.put("data", penEntity);
         return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<PenEntity> getBookById(@PathVariable String id) {
+        log.debug("REST request to Pen by oid : {}", id);
+        List<PenEntity> penEntity = new ArrayList<PenEntity>();
+        penEntity.add(penEntity1);
+        System.out.println(SecurityContextHolder.getContext().getAuthentication().getName());
+        return new ResponseEntity(penEntity, HttpStatus.OK);
     }
 }
